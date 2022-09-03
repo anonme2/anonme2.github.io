@@ -1,0 +1,195 @@
+/*## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Dark cyan: hsl(158, 36%, 37%)
+- Cream: hsl(30, 38%, 92%)
+
+### Neutral
+
+- Very dark blue: hsl(212, 21%, 14%)
+- Dark grayish blue: hsl(228, 12%, 48%)
+- White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 14px
+
+### Font
+
+- Family: [Montserrat](https://fonts.google.com/specimen/Montserrat)
+- Weights: 500, 700
+
+- Family: [Fraunces](https://fonts.google.com/specimen/Fraunces)
+- Weights: 700
+*/
+/*Maybe it is wise to code it according to the dimensions of an i-phone 6s width 375 height 667px medium mobile screen*/
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+img {
+  max-width: 100%;
+  /*	Defines the minimum width in percent of the containing block*/
+}
+* {
+  /*the * symbol targets everything on the webpage*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* removed box-sizing: border-box*/
+}
+.attribution {
+  display:none;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 2rem; /*pushes the the attribution away from the prduct description*/
+}
+.attribution a {
+  color: hwb(317 2% 2% / 0.379);
+}
+
+body {
+  background-color: hsl(30, 38%, 92%);
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  display: flex; /*Displays an element as a block-level flex container*/
+  flex-direction: column; /*flex direction specifies the layout of flexible items - i.e stacks img,productdiscrp, and my <div class=attribution> all on top of each other  */
+  align-items: center; /*this brings the two articles within the div container aligned about the vertical axis*/
+  justify-content: center; /* items are centered about the main horizontal axis.
+    /*The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).
+                                       Tip: Use the align-items property to align the items vertically.*/
+  min-height: 100vh;
+  height: fit-content; /*Note: This prevents the value of the height property from becoming smaller than min-height for the element. 1vh is 1% of the height of the viewport. 100vh is 100% of the viewport height.*/
+  /* the calculation (100vh-0.1px) is preformed because;
+                                      1) we need a fixed height inorder to center which appartently is at 100 viewpoint heights.
+                                    2) apparently mobiles might not have this viewpoint height?? so he recommends the above conversion into pixels}*/
+}
+
+/* i.e 1.5 * 16 pixels because that is default size of the root element html in most browsers*/
+h1,
+.reducPrice {
+  font-family: "Fraunces", sans-serif;
+}
+
+button {
+  font-family: "Montserrat", sans-serif;
+}
+.reducPrice {
+  color: hsl(158, 36%, 37%);
+  font-size: 2rem; /*the reduced price formt seems as large a font as the h2 and is styled the same with 'frauneces' */
+  margin-right: 2rem; /*gives a nice space form the second item in list horizontal list*/
+}
+
+.oldPrice {
+  color: hsl(228, 12%, 48%);
+  font-family: "Montserrat", sans-serif; /* making the old pice smae font and color as the paragraph*/
+}
+h1 {
+  color: hsl(212, 21%, 14%);
+  margin-bottom: 1rem; /*makes a space between the h1 and the p article below*/
+  font-size: 2rem; /*although thi h1 should occupy two lines first line two words, 3 words 2nd line*/
+}
+
+p {
+  color: hsl(228, 12%, 48%);
+  line-height: 1.6; /*number 	A number that will be multiplied with the current font-size to set the line height*/
+  margin-bottom: 2rem;
+  font-weight: 500; /*makes a nice gap between the paragraph and the unordered list below*/
+}
+h2 {
+  text-transform: capitalize;
+  font-size: 0.8rem; /* 1rem=16px*1  Root em. This relative unit is not affected by the size or setting of a parent element, and is instead based on the root of the document. For websites, the root of the document is the html element. In most browsers, the default font size is 16, so the font-size of html elements is 16px. So in this case, p is 20px (16 * 1.25).
+                                          But if a user changes their browser's default font size, then the font-size of p will scale up or down accordingly.*/
+  font-weight: 500; /*styles the thickness of the font*/
+  color: hsl(228, 12%, 48%);
+  margin-bottom: 1rem; /*this line provides a space between the h1-perfume text and the h2 below*/
+  letter-spacing: 0.25rem;
+}
+
+.container {
+  max-width: 350px; /* 350 looks like the right width for the mobile design.*/
+  height: 500px;
+}
+
+.btn {
+  color: hsl(0, 0%, 100%); /*style out my button*/
+  background-color: hsl(158, 36%, 37%);
+  border-color: hsl(158, 36%, 37%);
+  font-weight: 700; /* two font weights are specified and this button font is pretty thick so t must be 700 */
+  font-size: 1rem; /* needed to increase sze of the font in the buton*/
+  width: 100%; /* this defines the width of the button as 100% of the containing block, still not too sure which is the containing block though; the nearest ancestor which is a block container*/
+  padding: 1rem; /*increases the size of our button up and down by 1rem.*/
+  border-radius: 0.6rem;
+  border-style: none;
+  cursor: pointer; /* changes the cursor to a pointing figure when hovering over the button*/
+  display: flex;
+  align-items: center; /*ceneters the elements about the horzontal axis.*/
+  justify-content: center;
+}
+.btn:hover {
+  background-color: hsl(158, 37%, 19%);
+}
+.btn img {
+  margin-right: 0.5rem; /* creates a suitable sized space between the trlley image and the text*/
+}
+
+.productdiscrp {
+  background-color: hsl(0, 0%, 100%);
+  padding: 1.5rem; /*16*1.5= 24px*/
+  border-radius: 0 0 1rem 1rem; /*this rounds out the corners of the product discription box syntax: top left,topright, bottom left, bottom right*/
+  margin-top: -0.2rem; /* from experimentation this was small enough to remove gap between productdiscrip article and img within the perfumepic img.*/
+}
+.perfumepic img {
+  border-radius: 1rem 1rem 0 0; /*formats the image in perfumepic artice*/
+}
+.productdiscrp ul {
+  list-style-type: none; /* removes the bullet points from the unordered list.*/
+  display: flex; /* we need to create a horizontal list with different sized list elements.*/
+  align-items: center; /* in the design the unordered list has been centered about the horzontal axis*/
+  margin-bottom: 2rem; /* gives nice space away from the button */
+}
+
+@media (min-width: 640px) {
+  .container {
+    display: flex;
+    flex-direction: row; /* this repeats twice with 1 fractional column each time. w3 method for displaying the articels as columns within the container is: grid-template-columns: auto auto*/
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 600px;
+    height: 400px;
+  }
+  .perfumepic img {
+    height: 436px; /* almost worked with height of 436px for both img and productdiscrp*/
+    border-radius: 1rem 0 0 1rem;
+    width: 275px;
+  }
+  .productdiscrp {
+    height: 436px;
+    border-radius: 0 1rem 1rem 0;
+    margin: 0rem;
+    width: 275px;
+  }
+
+  .productdiscrp ul {
+    margin-bottom: 1.25rem;
+    margin-top: -1.25rem;
+  }
+
+  .attribution {
+    display: initial;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 2rem; /*pushes the the attribution away from the prduct description*/
+  }
+  .attribution a {
+    color: hwb(317 2% 2% / 0.379);
+  }
+} /*or tablets and wider we will have the desktop display*/
