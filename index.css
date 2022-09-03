@@ -66,7 +66,7 @@ body {
     /*The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).
                                        Tip: Use the align-items property to align the items vertically.*/
   min-height: 100vh;
-  height: fit-content; /*Note: This prevents the value of the height property from becoming smaller than min-height for the element. 1vh is 1% of the height of the viewport. 100vh is 100% of the viewport height.*/
+  height: auto; /*Note: This prevents the value of the height property from becoming smaller than min-height for the element. 1vh is 1% of the height of the viewport. 100vh is 100% of the viewport height.*/
   /* the calculation (100vh-0.1px) is preformed because;
                                       1) we need a fixed height inorder to center which appartently is at 100 viewpoint heights.
                                     2) apparently mobiles might not have this viewpoint height?? so he recommends the above conversion into pixels}*/
@@ -116,6 +116,7 @@ h2 {
 .container {
   max-width: 350px; /* 350 looks like the right width for the mobile design.*/
   height: 500px;
+  margin-top: -35px;
 }
 
 .btn {
@@ -165,6 +166,7 @@ h2 {
     min-height: 100vh;
     max-width: 600px;
     height: 400px;
+    margin-top: inherit;
   }
   .perfumepic img {
     height: 436px; /* almost worked with height of 436px for both img and productdiscrp*/
